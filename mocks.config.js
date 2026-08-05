@@ -12,11 +12,10 @@ module.exports = {
   plugins: {
     // Plugins to be registered
     //register: [],
-    proxyRoutesHandler: {
-    },
+    proxyRoutesHandler: {},
     adminApi: {
       // Port number for the admin API server to be listening at
-      //port: 3110,
+      port: 3001,
       // Host for the admin API server
       //host: "0.0.0.0",
       https: {
@@ -50,7 +49,7 @@ module.exports = {
     },
     collections: {
       // Selected collection
-      //selected: "base",
+      selected: "base",
     },
   },
   server: {
@@ -94,7 +93,7 @@ module.exports = {
     //watch: true,
     babelRegister: {
       // Load @babel/register
-      //enabled: false,
+      enabled: true,
       // Options for @babel/register
       //options: {},
     },
