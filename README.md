@@ -9,6 +9,7 @@ The goal of this hack is to come up with a prototype of at least one generic pag
 To start a local development server, run:
 
 ```bash
+npm run mocks
 ng serve
 ```
 
