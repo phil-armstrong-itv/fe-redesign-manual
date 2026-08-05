@@ -1,6 +1,8 @@
-# FeRedesignManual
+# Talpay Hackathon 2026 - Manual redesign/upgrade of UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.15.
+![img.png](img.png)
+
+The goal of this hack is to come up with a prototype of at least one generic page (wizard,search,view) for Talpay and prove that it can be used for multiple different types (i.e. view party/payment/request/whatever)
 
 ## Development server
 
