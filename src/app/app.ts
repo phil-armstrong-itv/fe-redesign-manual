@@ -1,13 +1,13 @@
 import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { Navbar } from './navbar/navbar';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Navbar, RouterOutlet],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('fe-redesign-manual');
-}
+export class App {}

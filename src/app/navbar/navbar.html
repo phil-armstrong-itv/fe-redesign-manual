@@ -1,0 +1,29 @@
+<nav hlmNavigationMenu [(value)]="_value">
+  <ul hlmNavigationMenuList class="flex-wrap">
+    <li hlmNavigationMenuItem id="home">
+      <a hlmNavigationMenuLink href="/">Talent Payments</a>
+    </li>
+
+    <li hlmNavigationMenuItem class="hidden md:block">
+      <button hlmNavigationMenuTrigger>Requester</button>
+      <hlm-navigation-menu-content *hlmNavigationMenuPortal>
+        <ul>
+          <li>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucidePlus" />
+              Create Express Pay request
+            </a>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucideSearch" />
+              Search requests
+            </a>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucideList" />
+              Pending requests
+            </a>
+          </li>
+        </ul>
+      </hlm-navigation-menu-content>
+    </li>
+  </ul>
+</nav>
