@@ -4,11 +4,6 @@
       <a hlmNavigationMenuLink class="text-white bg-transparent hover:!bg-indigo-600" href="/">Talent Payments</a>
     </li>
 
-    <!-- Mobile Burger Trigger -->
-    <button hlmBtn variant="outline" size="icon" class="md:hidden" [hlmSheetTrigger]="mobileMenu">
-      <ng-icon name="lucideMenu" />
-    </button>
-
     <li hlmNavigationMenuItem class="hidden md:block">
       <button hlmNavigationMenuTrigger class="text-white bg-transparent hover:!bg-indigo-600">Requester</button>
       <hlm-navigation-menu-content *hlmNavigationMenuPortal>
@@ -53,12 +48,3 @@
     </li>
   </ul>
 </nav>
-
-<ng-template #mobileMenu>
-  <hlm-sheet-content side="left">
-    <nav class="flex flex-col gap-2 mt-4">
-      <a href="#" hlmBtn variant="ghost" class="justify-start">Home</a>
-      <a href="#" hlmBtn variant="ghost" class="justify-start">About</a>
-    </nav>
-  </hlm-sheet-content>
-</ng-template>
