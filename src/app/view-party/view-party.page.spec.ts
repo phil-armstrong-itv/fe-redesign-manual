@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewPartyPage } from './view-party-page';
+import { Relationships } from './view-party.page';
 
-describe('ViewPartyPage', () => {
-  let component: ViewPartyPage;
-  let fixture: ComponentFixture<ViewPartyPage>;
+describe('Relationships', () => {
+  let component: Relationships;
+  let fixture: ComponentFixture<Relationships>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewPartyPage],
+      imports: [Relationships],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewPartyPage);
+    fixture = TestBed.createComponent(Relationships);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

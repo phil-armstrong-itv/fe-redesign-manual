@@ -1,7 +1,7 @@
 const collections = [
   {
     id: 'base', // collection id
-    routes: ['view-party:contributor'],
+    routes: ['view-party:contributor', 'party-search:success'],
   },
 ];
 

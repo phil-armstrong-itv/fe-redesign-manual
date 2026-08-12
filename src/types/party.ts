@@ -1,25 +1,46 @@
 export interface Party {
-
+  id: string;
+  type: PartyType;
+  demographicDetails: ContributorDemographicDetails | AgentServiceCompanyDemographicDetails;
+  paymentDetails: PaymentDetails;
+  vatDetails: VatDetails;
 }
+
+export type PartyType = 'contributor' | 'serviceCompany' | 'agent';
 
 export interface Contributor extends Party {
   type: 'contributor';
   demographicDetails: ContributorDemographicDetails;
-  paymentDetails: PaymentDetails;
-  vatDetails: VatDetails;
   unionPensionDetails: UnionPensionDetails[];
 }
 
-export interface ContributorDemographicDetails {
-  names: ContributorNames,
-  address: Address,
-  emails: Emails,
-  contactNumber?: string,
-  dateOfBirth?: Date,
-  niNumber?: string,
-  gtvapId?: string,
+export interface ServiceCompany extends Party {
+  type: 'serviceCompany';
+  demographicDetails: AgentServiceCompanyDemographicDetails;
+}
+
+export interface Agent extends Party {
+  type: 'agent';
+  demographicDetails: AgentServiceCompanyDemographicDetails;
+}
+
+export interface DemographicDetails {
+  address: Address;
+  emails: Emails;
+  contactNumber?: string;
+  gtvapId?: string;
   status: 'active' | 'untraceable';
+}
+
+export interface ContributorDemographicDetails extends DemographicDetails {
+  names: ContributorNames;
+  dateOfBirth?: Date;
+  niNumber?: string;
   foreignEntertainer?: boolean;
+}
+
+export interface AgentServiceCompanyDemographicDetails extends DemographicDetails {
+  name: string;
 }
 
 export interface Emails {
