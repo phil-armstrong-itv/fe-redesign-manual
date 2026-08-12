@@ -1,11 +1,37 @@
-<nav hlmNavigationMenu [(value)]="_value">
-  <ul hlmNavigationMenuList class="flex-wrap">
+<nav hlmNavigationMenu [(value)]="_value" class="bg-indigo-950 max-w-full pt-2 pb-2">
+  <ul hlmNavigationMenuList class="flex-wrap justify-start">
     <li hlmNavigationMenuItem id="home">
-      <a hlmNavigationMenuLink href="/">Talent Payments</a>
+      <a hlmNavigationMenuLink class="text-white bg-transparent hover:!bg-indigo-600" href="/">Talent Payments</a>
     </li>
 
+    <!-- Mobile Burger Trigger -->
+    <button hlmBtn variant="outline" size="icon" class="md:hidden" [hlmSheetTrigger]="mobileMenu">
+      <ng-icon name="lucideMenu" />
+    </button>
+
     <li hlmNavigationMenuItem class="hidden md:block">
-      <button hlmNavigationMenuTrigger>Requester</button>
+      <button hlmNavigationMenuTrigger class="text-white bg-transparent hover:!bg-indigo-600">Requester</button>
+      <hlm-navigation-menu-content *hlmNavigationMenuPortal>
+        <ul>
+          <li>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucidePlus" />
+              Create Express Pay request
+            </a>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucideSearch" />
+              Search requests
+            </a>
+            <a hlmNavigationMenuLink href="#">
+              <ng-icon name="lucideList" />
+              Pending requests
+            </a>
+          </li>
+        </ul>
+      </hlm-navigation-menu-content>
+    </li>
+    <li hlmNavigationMenuItem class="hidden md:block">
+      <button hlmNavigationMenuTrigger class="text-white bg-transparent hover:!bg-indigo-600">Authoriser</button>
       <hlm-navigation-menu-content *hlmNavigationMenuPortal>
         <ul>
           <li>
@@ -27,3 +53,12 @@
     </li>
   </ul>
 </nav>
+
+<ng-template #mobileMenu>
+  <hlm-sheet-content side="left">
+    <nav class="flex flex-col gap-2 mt-4">
+      <a href="#" hlmBtn variant="ghost" class="justify-start">Home</a>
+      <a href="#" hlmBtn variant="ghost" class="justify-start">About</a>
+    </nav>
+  </hlm-sheet-content>
+</ng-template>

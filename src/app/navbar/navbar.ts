@@ -2,15 +2,16 @@ import { Component, signal } from '@angular/core';
 
 import { HlmNavigationMenuImports } from '@spartan-ng/helm/navigation-menu';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideList, lucideSearch, lucidePlus } from '@ng-icons/lucide';
+import { lucideList, lucideSearch, lucidePlus, lucideMenu } from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-navbar',
   imports: [HlmNavigationMenuImports, NgIcon],
-  providers: [provideIcons({ lucideSearch, lucidePlus, lucideList })],
+  providers: [provideIcons({ lucideSearch, lucidePlus, lucideList, lucideMenu })],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
   protected readonly _value = signal('home');
+  protected readonly _mobileMenuOpen = signal(false);
 }
