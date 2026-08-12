@@ -2,10 +2,11 @@ import { Accordion } from '../accordion/accordion';
 import { Component, input, effect } from '@angular/core';
 import { Contributor, Party } from '../../types/party';
 import { HideInfo } from '../hideInfo/hide-info';
+import { HlmTabs, HlmTabsContent, HlmTabsList, HlmTabsTrigger } from '@spartan-ng/helm/tabs';
 
 @Component({
   selector: 'app-view-party-page',
-  imports: [Accordion, HideInfo],
+  imports: [Accordion, HideInfo, HlmTabsList, HlmTabs, HlmTabsTrigger, HlmTabsContent],
   templateUrl: './view-party-page.html',
   styleUrl: './view-party-page.css',
 })
