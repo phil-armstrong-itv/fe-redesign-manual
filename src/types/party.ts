@@ -1,9 +1,12 @@
 export interface Party {
-  type: 'contributor' | 'serviceCompany' | 'agent';
+  id: string;
+  type: PartyType;
   demographicDetails: ContributorDemographicDetails | AgentServiceCompanyDemographicDetails;
   paymentDetails: PaymentDetails;
   vatDetails: VatDetails;
 }
+
+export type PartyType = 'contributor' | 'serviceCompany' | 'agent';
 
 export interface Contributor extends Party {
   type: 'contributor';

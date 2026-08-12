@@ -12,13 +12,13 @@ export const routes: Routes = [
   {
     path: '',
     component: ViewPartyPage,
+    resolve: {
+      party: partySummaryResolver,
+    },
     children: [
       {
         path: '',
         component: PartySummaryPage,
-        resolve: {
-          party: partySummaryResolver,
-        },
       },
       {
         path: 'engagements',

@@ -1,15 +1,5 @@
-<p>view-party-page works!</p>
-<hlm-tabs  tab="account" orientation="vertical" class="mx-auto flex max-w-3xl flex-row space-x-2">
-  <hlm-tabs-list   aria-label="tabs example">
-    <button hlmTabsTrigger="summary">Summary</button>
-
-    <button hlmTabsTrigger="requests">Requests</button>
-  </hlm-tabs-list>
-  <div hlmTabsContent="summary">
-    <accordion [title]="'First'"><p>first acc</p></accordion>
-    <accordion [title]="'Second Acc'"><p>Second</p></accordion>
-    <accordion [title]="'Third Acc'">
-      <hideInfo [title]="'Account number'" [info]="'1234567890'"></hideInfo>
-    </accordion>
-  </div>
-</hlm-tabs>
+<accordion [title]="'First'"><p>first acc</p></accordion>
+<accordion [title]="'Second Acc'"><p>Second</p></accordion>
+<accordion [title]="'Third Acc'">
+  <hideInfo [title]="'Account number'" [info]="'1234567890'"></hideInfo>
+</accordion>
