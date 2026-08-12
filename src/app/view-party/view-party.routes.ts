@@ -6,48 +6,55 @@ import { PartyHistoryPage } from './history/party-history.page';
 import { PartyPaymentsPage } from './payments/party-payments.page';
 import { PartyDebtPage } from './debt/party-debt.page';
 import { PartyRelationshipsPage } from './relationships/party-relationships.page';
+import { ViewPartyPage } from './view-party.page';
 
 export const routes: Routes = [
   {
     path: '',
-    component: PartySummaryPage,
-    resolve: {
-      party: partySummaryResolver,
-    },
-  },
-  {
-    path: 'engagements',
-    component: PartyEngagementsPage,
-    resolve: {
-      // TODO create resolver to load engagements
-    },
-  },
-  {
-    path: 'debt',
-    component: PartyDebtPage,
-    resolve: {
-      // TODO create resolver to load debt
-    },
-  },
-  {
-    path: 'history',
-    component: PartyHistoryPage,
-    resolve: {
-      // TODO create resolve to load party history
-    },
-  },
-  {
-    path: 'payments',
-    component: PartyPaymentsPage,
-    resolve: {
-      // TODO create resolve to load payments
-    },
-  },
-  {
-    path: 'relationships',
-    component: PartyRelationshipsPage,
-    resolve: {
-      // TODO create resolve to load relationships
-    },
+    component: ViewPartyPage,
+    children: [
+      {
+        path: '',
+        component: PartySummaryPage,
+        resolve: {
+          party: partySummaryResolver,
+        },
+      },
+      {
+        path: 'engagements',
+        component: PartyEngagementsPage,
+        resolve: {
+          // TODO create resolver to load engagements
+        },
+      },
+      {
+        path: 'debt',
+        component: PartyDebtPage,
+        resolve: {
+          // TODO create resolver to load debt
+        },
+      },
+      {
+        path: 'history',
+        component: PartyHistoryPage,
+        resolve: {
+          // TODO create resolve to load party history
+        },
+      },
+      {
+        path: 'payments',
+        component: PartyPaymentsPage,
+        resolve: {
+          // TODO create resolve to load payments
+        },
+      },
+      {
+        path: 'relationships',
+        component: PartyRelationshipsPage,
+        resolve: {
+          // TODO create resolve to load relationships
+        },
+      },
+    ],
   },
 ];

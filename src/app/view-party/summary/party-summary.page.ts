@@ -7,8 +7,8 @@ import { Contributor, Party } from '../../../types/party';
 @Component({
   selector: 'app-party-summary-page',
   imports: [Accordion, HideInfo, HlmTabsList, HlmTabs, HlmTabsTrigger, HlmTabsContent],
-  templateUrl: './view-party-page.html',
-  styleUrl: './view-party-page.css',
+  templateUrl: './party-summary.page.html',
+  styleUrl: './party-summary.page.css',
 })
 export class PartySummaryPage {
   party = input.required<Party>();
