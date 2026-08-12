@@ -1,40 +1,54 @@
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Name</label></div><div class="col-xs-7">Test name</div>
+ <div>
+  <div class="row-auto">
+    <div class="col-xs-3"><label class="right">Name</label></div><div class="columns-7xl">{{getPartyName()}}</div>
   </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Stage name</label></div><div class="col-xs-7">Stage name</div>
+  @if (demographicDetails().names.stage !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Stage name</label></div><div class="columns-7xl">{{demographicDetails().names.stage}}</div>
+    </div>
+  }
+  <div class="row-auto">
+    <div class="columns-3xs"><label class="right">Home Address</label></div><div class="columns-7xl">{{ getFullAddress() }}</div>
   </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Home Address</label></div><div class="col-xs-7">address</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Date of birth</label></div><div class="col-xs-7">dateOfBirth</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Contact number</label></div>
-    <div class="col-xs-7">contact</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Primary Email</label></div>
-    <div class="col-xs-7">email</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Pay Documents Email</label></div>
-    <div class="col-xs-7">docuemail</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">Vat Email</label></div>
-    <div class="col-xs-7">vatemail</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">NI number</label></div>
-    <div class="col-xs-7">ni</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">GTVAP Id</label></div>
-    <div class="col-xs-7">gtvap</div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3"><label class="right">VAT number</label></div>
-    <div class="col-xs-7">vatnumber</div>
-  </div>
+  @if (demographicDetails().dateOfBirth !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Date of birth</label></div><div class="columns-7xl">{{ demographicDetails().dateOfBirth }}</div>
+    </div>
+  }
+  @if (demographicDetails().contactNumber !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Contact number</label></div>
+      <div class="columns-7xl">{{ demographicDetails().contactNumber }}</div>
+    </div>
+  }
+  @if (demographicDetails().emails.primary !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Primary Email</label></div>
+      <div class="columns-7xl">{{ demographicDetails().emails.primary }}</div>
+    </div>
+  }
+  @if (demographicDetails().emails.payDocuments !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Pay Documents Email</label></div>
+      <div class="columns-7xl">{{ demographicDetails().emails.payDocuments }}</div>
+    </div>
+  }
+  @if (demographicDetails().emails.vat !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Vat Email</label></div>
+      <div class="columns-7xl">{{ demographicDetails().emails.vat }}</div>
+    </div>
+  }
+  @if (demographicDetails().niNumber !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">NI number</label></div>
+      <div class="columns-7xl">{{ demographicDetails().niNumber }}</div>
+    </div>
+  }
+  @if (demographicDetails().gtvapId !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">GTVAP Id</label></div>
+      <div class="columns-7xl">{{ demographicDetails().gtvapId }}</div>
+    </div>
+  }
+ </div>

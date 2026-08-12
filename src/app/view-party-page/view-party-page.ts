@@ -18,4 +18,8 @@ export class ViewPartyPage {
       console.log(`Party loaded: ${(this.party() as Contributor).demographicDetails.names.first}`);
     });
   }
+
+  getContributorParty() {
+    return this.party() as Contributor;
+  }
 }
