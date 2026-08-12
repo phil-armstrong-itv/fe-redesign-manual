@@ -5,7 +5,7 @@ import serviceCompanyData from '../data/party/service-company.json' with { type:
 const routes = [
   {
     id: 'view-party', // id of the route
-    url: '/api/view-party/:partyId', // url in path-to-regexp format
+    url: '/api/party/:partyId', // url in path-to-regexp format
     method: 'GET', // HTTP method
     variants: [
       {
