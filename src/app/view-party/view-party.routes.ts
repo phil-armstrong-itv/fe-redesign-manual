@@ -9,6 +9,7 @@ import { PartyRelationshipsPage } from './relationships/party-relationships.page
 import { ViewPartyPage } from './view-party.page';
 import { PartyRequestsPage } from './requests/party-requests.page';
 import { requestSearchResolver } from './requests/request-search.resolver';
+import { PartyAdvancesPage } from './advances/party-advances-page.component';
 
 export const routes: Routes = [
   {
@@ -23,10 +24,10 @@ export const routes: Routes = [
         component: PartySummaryPage,
       },
       {
-        path: 'requests',
-        component: PartyRequestsPage,
+        path: 'advances',
+        component: PartyAdvancesPage,
         resolve: {
-          requests: requestSearchResolver,
+          // TODO create resolver to load advances
         },
       },
       {
@@ -48,6 +49,13 @@ export const routes: Routes = [
         component: PartyHistoryPage,
         resolve: {
           // TODO create resolve to load party history
+        },
+      },
+      {
+        path: 'requests',
+        component: PartyRequestsPage,
+        resolve: {
+          requests: requestSearchResolver,
         },
       },
       {

@@ -1,13 +1,15 @@
-<h1>View {{ partyType() }} - {{ partyName() }} ({{partyId()}})</h1>
+<h1 class="mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">{{ partyName() }} ({{partyId()}})</h1>
 
-<hlm-tabs tab="summary" class="mx-auto flex max-w-3xl flex-col">
-  <hlm-tabs-list aria-label="party navigation tabs">
+<hlm-tabs tab="summary" class="flex w-full flex-col">
+  <hlm-tabs-list aria-label="party navigation tabs" class="!w-full" variant="line">
     <a hlmTabsTrigger="summary" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Summary</a>
-    <a hlmTabsTrigger="engagements" routerLink="./engagements" routerLinkActive="active">Engagements</a>
-    <a hlmTabsTrigger="debt" routerLink="./debt" routerLinkActive="active">Debt</a>
-    <a hlmTabsTrigger="history" routerLink="./history" routerLinkActive="active">History</a>
-    <a hlmTabsTrigger="payments" routerLink="./payments" routerLinkActive="active">Payments</a>
     <a hlmTabsTrigger="relationships" routerLink="./relationships" routerLinkActive="active">Relationships</a>
+    <a hlmTabsTrigger="engagements" routerLink="./engagements" routerLinkActive="active">Engagements</a>
+    <a hlmTabsTrigger="payments" routerLink="./payments" routerLinkActive="active">Payments</a>
+    <a hlmTabsTrigger="debt" routerLink="./debt" routerLinkActive="active">Debt</a>
+    <a hlmTabsTrigger="advances" routerLink="./advances" routerLinkActive="active">Advances</a>
+    <a hlmTabsTrigger="history" routerLink="./history" routerLinkActive="active">History</a>
   </hlm-tabs-list>
 </hlm-tabs>
+<br />
 <router-outlet></router-outlet>
