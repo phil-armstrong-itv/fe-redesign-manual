@@ -1,3 +1,10 @@
 {
-  "type": "service-company"
+  "type": "service-company",
+  "demographic": {
+    "name": "Phil",
+    "address": {
+
+    },
+    "gtvapId": "whatever"
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { ContributorDemographicDetails, Party } from '../../types/party';
 
 @Component({
   selector: 'demographic-details',
@@ -6,6 +7,5 @@ import { Component, signal } from '@angular/core';
   styleUrl: './demographic-details.css',
 })
 export class DemographicDetails {
-  protected readonly _value = signal('home');
-  protected readonly _mobileMenuOpen = signal(false);
+  demographicDetails = input.required<ContributorDemographicDetails>();
 }

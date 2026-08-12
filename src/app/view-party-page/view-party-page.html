@@ -1,6 +1,6 @@
 <p>view-party-page works!</p>
 <accordion [title]="'First'">
-  <demographic-details [party]></demographic-details>
+  <demographic-details [demographicDetails]=(party as Contributer).demographicDetails></demographic-details>
 </accordion>
 <accordion [title]="'Second Acc'"><p>Second</p></accordion>
-<accordion [title]="'Third Acc'"><p>Third</p></accordion>
+<accordion [title]="'Third Acc'"><hideInfo [title]="'Account number'" [info]="'1234567890'"></hideInfo></accordion>
