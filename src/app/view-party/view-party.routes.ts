@@ -22,10 +22,16 @@ export const routes: Routes = [
       {
         path: '',
         component: PartySummaryPage,
+        data: {
+          activeTab: 'summary',
+        },
       },
       {
         path: 'advances',
         component: PartyAdvancesPage,
+        data: {
+          activeTab: 'advances',
+        },
         resolve: {
           // TODO create resolver to load advances
         },
@@ -33,6 +39,9 @@ export const routes: Routes = [
       {
         path: 'engagements',
         component: PartyEngagementsPage,
+        data: {
+          activeTab: 'engagements',
+        },
         resolve: {
           // TODO create resolver to load engagements
         },
@@ -40,6 +49,9 @@ export const routes: Routes = [
       {
         path: 'debt',
         component: PartyDebtPage,
+        data: {
+          activeTab: 'debt',
+        },
         resolve: {
           // TODO create resolver to load debt
         },
@@ -47,6 +59,9 @@ export const routes: Routes = [
       {
         path: 'history',
         component: PartyHistoryPage,
+        data: {
+          activeTab: 'history',
+        },
         resolve: {
           // TODO create resolve to load party history
         },
@@ -61,6 +76,9 @@ export const routes: Routes = [
       {
         path: 'payments',
         component: PartyPaymentsPage,
+        data: {
+          activeTab: 'payments',
+        },
         resolve: {
           // TODO create resolve to load payments
         },
@@ -68,6 +86,9 @@ export const routes: Routes = [
       {
         path: 'relationships',
         component: PartyRelationshipsPage,
+        data: {
+          activeTab: 'relationships',
+        },
         resolve: {
           // TODO create resolve to load relationships
         },

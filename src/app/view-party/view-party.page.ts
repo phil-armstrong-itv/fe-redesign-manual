@@ -1,7 +1,15 @@
-import { Component, computed, input } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, computed, inject, input } from '@angular/core';
+import {
+  NavigationEnd,
+  Router,
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { HlmTabs, HlmTabsList, HlmTabsTrigger } from '@spartan-ng/helm/tabs';
 import { Agent, Contributor, Party, ServiceCompany } from '../../types/party';
+import { filter, map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-view-party-page',
@@ -10,23 +18,36 @@ import { Agent, Contributor, Party, ServiceCompany } from '../../types/party';
   styleUrl: './view-party.page.css',
 })
 export class ViewPartyPage {
+  private static readonly TABS = ['relationships', 'engagements', 'payments', 'debt', 'advances', 'history'];
+  private router = inject(Router);
+
   party = input.required<Party>();
   partyId = computed(() => this.party().id);
-  partyType = computed(() => this.party().type);
   partyName = computed(() => {
     const party = this.party();
     switch (party.type) {
-      case 'contributor':
-        {
-          const contributor = this.party() as Contributor;
-          return `${contributor.demographicDetails.names.first} ${contributor.demographicDetails.names.last}`;
-        }
+      case 'contributor': {
+        const contributor = this.party() as Contributor;
+        return `${contributor.demographicDetails.names.first} ${contributor.demographicDetails.names.last}`;
+      }
       case 'serviceCompany':
-      case 'agent':
-        {
-          const serviceCompanyOrAgent = this.party() as ServiceCompany | Agent;
-          return serviceCompanyOrAgent.demographicDetails.name;
-        }
+      case 'agent': {
+        const serviceCompanyOrAgent = this.party() as ServiceCompany | Agent;
+        return serviceCompanyOrAgent.demographicDetails.name;
+      }
     }
   });
+
+  activeTab = toSignal(
+    this.router.events.pipe(
+      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+      map(e => this.getTabFromUrl(e.urlAfterRedirects)),
+    ),
+    { initialValue: this.getTabFromUrl(this.router.url) },
+  );
+
+  private getTabFromUrl(url: string): string {
+    const lastSegment = url.split('/').pop() ?? '';
+    return ViewPartyPage.TABS.includes(lastSegment) ? lastSegment : 'summary';
+  }
 }

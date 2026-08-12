@@ -1,6 +1,6 @@
 <h1 class="mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">{{ partyName() }} ({{partyId()}})</h1>
 
-<hlm-tabs tab="summary" class="flex w-full flex-col">
+<hlm-tabs [tab]="activeTab()" class="flex w-full flex-col">
   <hlm-tabs-list aria-label="party navigation tabs" class="!w-full" variant="line">
     <a hlmTabsTrigger="summary" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Summary</a>
     <a hlmTabsTrigger="relationships" routerLink="./relationships" routerLinkActive="active">Relationships</a>
