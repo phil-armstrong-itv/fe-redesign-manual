@@ -7,6 +7,8 @@ import { PartyPaymentsPage } from './payments/party-payments.page';
 import { PartyDebtPage } from './debt/party-debt.page';
 import { PartyRelationshipsPage } from './relationships/party-relationships.page';
 import { ViewPartyPage } from './view-party.page';
+import { PartyRequestsPage } from './requests/party-requests.page';
+import { requestSearchResolver } from './requests/request-search.resolver';
 
 export const routes: Routes = [
   {
@@ -19,6 +21,13 @@ export const routes: Routes = [
       {
         path: '',
         component: PartySummaryPage,
+      },
+      {
+        path: 'requests',
+        component: PartyRequestsPage,
+        resolve: {
+          requests: requestSearchResolver,
+        },
       },
       {
         path: 'engagements',
