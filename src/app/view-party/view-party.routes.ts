@@ -10,6 +10,7 @@ import { ViewPartyPage } from './view-party.page';
 import { PartyRequestsPage } from './requests/party-requests.page';
 import { requestSearchResolver } from './requests/request-search.resolver';
 import { PartyAdvancesPage } from './advances/party-advances-page.component';
+import { paymentSearchResolver } from './payments/payment-search.resolver';
 
 export const routes: Routes = [
   {
@@ -69,6 +70,7 @@ export const routes: Routes = [
       {
         path: 'requests',
         component: PartyRequestsPage,
+
         resolve: {
           requests: requestSearchResolver,
         },
@@ -80,7 +82,7 @@ export const routes: Routes = [
           activeTab: 'payments',
         },
         resolve: {
-          // TODO create resolve to load payments
+         payments: paymentSearchResolver
         },
       },
       {
