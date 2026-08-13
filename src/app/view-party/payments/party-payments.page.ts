@@ -22,7 +22,7 @@ export class PartyPaymentsPage {
     'payeeType',
     'amount',
     'status',
-  ];
+  ]
 
   searchEvent(searchString: string) {
     console.log(searchString);
