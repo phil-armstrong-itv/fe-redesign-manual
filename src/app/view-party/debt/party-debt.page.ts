@@ -1,27 +1,29 @@
-import { Component, signal, input, effect } from '@angular/core';
+import { Component, signal, input, effect, computed } from '@angular/core';
 import { HlmButton } from '@spartan-ng/helm/button';
-import { NgIcon } from '@ng-icons/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
 import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
 import { Debt } from '../../../types/debt';
+import { HlmDrawerImports } from '@spartan-ng/helm/drawer';
+import { lucidePlus, lucideSave, lucideDelete } from '@ng-icons/lucide';
+import { PartyDebtForm } from './debt-form/party-debt-form.component';
+
 
 @Component({
   selector: 'app-party-debt-page',
-  imports: [HlmButton, NgIcon, TalpayTable],
+  imports: [
+    HlmButton,
+    NgIcon,
+    HlmDrawerImports,
+    TalpayTable,
+    PartyDebtForm,
+  ],
+  providers: [provideIcons({ lucidePlus, lucideSave, lucideDelete })],
   templateUrl: './party-debt.page.html',
   styleUrl: './party-debt.page.css',
 })
 export class PartyDebtPage {
-  currentDebt = 1000000;
-  debts = signal<Debt[]>([]);
   partyDebts = input.required<Debt[]>();
+  currentDebt = computed(() => this.partyDebts().reduce((acc, debt) => acc + debt.amount, 0));
 
   columns = ['type', 'date', 'amount', 'refNo', 'programme', 'createdBy', 'description'];
-
-  constructor() {
-
-    effect(() => {
-      this.debts.set(this.partyDebts())
-    })
-  }
-
 }

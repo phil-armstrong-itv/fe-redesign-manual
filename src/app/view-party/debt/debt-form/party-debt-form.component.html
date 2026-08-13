@@ -1,0 +1,49 @@
+<hlm-drawer-content *hlmDrawerPortal="let ctx">
+  <hlm-drawer-header>
+    <h3 hlmDrawerTitle>Create {{ formType() }}</h3>
+  </hlm-drawer-header>
+  <div class="pt-4 pb-4 pl-50 pr-50">
+    <fieldset hlmFieldSet>
+      <div class="grid grid-cols-3 gap-4">
+        <div hlmField>
+          <label hlmFieldLabel for="field-input-date">Date</label>
+          <p hlmFieldDescription>Date of  {{ formType() }}.</p>
+          <hlm-date-picker id="field-input-date">
+            <hlm-date-picker-trigger buttonId="date">Pick a date</hlm-date-picker-trigger>
+          </hlm-date-picker>
+        </div>
+        <div hlmField>
+          <label hlmFieldLabel for="field-input-amount">Amount</label>
+          <p hlmFieldDescription>Must be a positive number in GBP.</p>
+          <input hlmInput id="field-input-amount" type="text" placeholder="1.00" />
+        </div>
+        <div hlmField>
+          <label hlmFieldLabel for="field-input-reference-number">Reference Number</label>
+          <p hlmFieldDescription>Reference number of associated request.</p>
+          <input hlmInput id="field-input-reference-number" type="text" placeholder="S1234567" />
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mt-4">
+        <div hlmField>
+          <label hlmFieldLabel for="field-input-programme">Programme</label>
+          <p hlmFieldDescription>Programme associated with  {{ formType() }}.</p>
+          <input hlmInput id="field-input-programme" type="text" placeholder="Emmerdale" />
+        </div>
+        <div hlmField>
+          <label hlmFieldLabel for="field-input-description">Description</label>
+          <p hlmFieldDescription>Short information about  {{ formType() }}.</p>
+          <input hlmInput id="field-input-description" type="text" placeholder="Whoopsie" />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <hlm-drawer-footer class="pl-50 pr-50">
+    <button hlmDrawerClose hlmBtn>
+      <ng-icon name="lucideSave" />
+      <span>Save</span>
+    </button>
+    <button hlmDrawerClose hlmBtn variant="secondary">
+      <span>Cancel</span>
+    </button>
+  </hlm-drawer-footer>
+</hlm-drawer-content>

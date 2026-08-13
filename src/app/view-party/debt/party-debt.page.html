@@ -1,14 +1,22 @@
 <div>
-  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Current debt ${{currentDebt}}</h2>
+  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Current debt {{ currentDebt() }}</h2>
   <div>
-    <br>
-    <button hlmBtn>
-      <span>Create debt</span>
-    </button>
-    <button hlmBtn>
-      <span>Create repayment</span>
-    </button>
+    <hlm-drawer>
+      <button hlmDrawerTrigger hlmBtn variant="outline">
+        <ng-icon name="lucidePlus" />
+        <span>Create debt</span>
+      </button>
+      <app-party-debt-form formType="debt"/>
+    </hlm-drawer>
+    <hlm-drawer>
+      <button hlmDrawerTrigger hlmBtn variant="outline">
+        <ng-icon name="lucidePlus" />
+        <span>Create recoupment</span>
+      </button>
+      <app-party-debt-form formType="recoupment"/>
+    </hlm-drawer>
   </div>
-  <talpay-table [columns]="columns" [data]="debts()"></talpay-table>
+  <br />
+  <talpay-table [columns]="columns" [data]="partyDebts()"></talpay-table>
 </div>
 

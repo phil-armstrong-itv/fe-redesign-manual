@@ -25,7 +25,12 @@
       "@spartan-ng/helm/separator": ["./libs/ui/separator/src/index.ts"],
       "@spartan-ng/helm/drawer": ["./libs/ui/drawer/src/index.ts"],
       "@spartan-ng/helm/textarea": ["./libs/ui/textarea/src/index.ts"],
-      "@spartan-ng/helm/checkbox": ["./libs/ui/checkbox/src/index.ts"]
+      "@spartan-ng/helm/checkbox": ["./libs/ui/checkbox/src/index.ts"],
+      "@spartan-ng/helm/date-picker": ["./libs/ui/date-picker/src/index.ts"],
+      "@spartan-ng/helm/calendar": ["./libs/ui/calendar/src/index.ts"],
+      "@spartan-ng/helm/select": ["./libs/ui/select/src/index.ts"],
+      "@spartan-ng/helm/popover": ["./libs/ui/popover/src/index.ts"],
+      "@spartan-ng/helm/input-group": ["./libs/ui/input-group/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
