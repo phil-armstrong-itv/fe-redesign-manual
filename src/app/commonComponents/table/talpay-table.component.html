@@ -1,0 +1,22 @@
+
+<div hlmTableContainer>
+  <table hlmTable>
+    <caption hlmTableCaption>Requests Table</caption>
+    <thead hlmTableHeader>
+    <tr hlmTableRow>
+      @for (column of columns(); track column) {
+        <th hlmTableHead>{{column}}</th>
+      }
+    </tr>
+    </thead>
+    <tbody hlmTableBody>
+      @for (request of data(); track $index) {
+        <tr hlmTableRow>
+          @for (column of columns(); track column) {
+            <td hlmTableCell>{{$any(request)[column]}}</td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
