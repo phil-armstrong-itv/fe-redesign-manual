@@ -1,0 +1,11 @@
+[
+  {
+    "datePaid": "2026-04-15",
+    "paymentMethod": "epayment",
+    "paymentReference": "0005454",
+    "payee": "Hank Lampshade",
+    "payeeType": "contributor",
+    "amount": 1000,
+    "status": "paid"
+  }
+]

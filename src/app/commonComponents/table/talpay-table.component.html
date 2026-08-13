@@ -1,4 +1,7 @@
-
+<hlm-field orientation="horizontal">
+  <input hlmInput [(ngModel)]="searchText" type="search" placeholder="Search..." />
+  <button (click)="search()" hlmBtn>Search</button>
+</hlm-field>
 <div hlmTableContainer>
   <table hlmTable>
     <caption hlmTableCaption>Requests Table</caption>

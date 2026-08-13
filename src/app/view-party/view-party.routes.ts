@@ -84,7 +84,7 @@ export const routes: Routes = [
           activeTab: 'payments',
         },
         resolve: {
-         payments: paymentSearchResolver
+          partyPayments: paymentSearchResolver
         },
       },
       {

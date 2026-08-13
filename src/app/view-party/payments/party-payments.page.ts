@@ -1,7 +1,8 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, effect, input, signal } from '@angular/core';
 import { Payment } from '../../../types/payment';
 import { Request } from '../../../types/request';
 import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
+import { PaymentSearchService } from '../../services/payment-search.service';
 
 @Component({
   selector: 'app-party-relationships-page',
@@ -10,7 +11,9 @@ import { TalpayTable } from '../../commonComponents/table/talpay-table.component
   styleUrl: './party-payments.page.css',
 })
 export class PartyPaymentsPage {
-  payments = input.required<Payment[]>();
+  payments = signal<Payment[]>([]);
+  partyPayments = input.required<Payment[]>();
+
   columns = [
     'datePaid',
     'paymentMethod',
@@ -21,9 +24,19 @@ export class PartyPaymentsPage {
     'status',
   ];
 
-  constructor() {
-    effect(() => {
-      console.log(`payment loaded ${this.payments() as Payment[]}`);
+  searchEvent(searchString: string) {
+    console.log(searchString);
+    var queryParam = 'paymentReference='+ searchString;
+    this.paymentSearchService.paymentSearchWithQueryParams(queryParam).subscribe(newPayments => {
+      this.payments.set(newPayments);
     });
+  }
+
+  constructor(private paymentSearchService: PaymentSearchService) {
+    effect(() => {
+      this.payments.set(this.partyPayments());
+    });
+
+
   }
 }
