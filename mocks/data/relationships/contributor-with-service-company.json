@@ -1,0 +1,14 @@
+{
+  "agents": [
+
+  ],
+  "serviceCompanies": [
+    {
+      "name": "Service Company 1",
+      "partyId": "67890",
+      "status": "active"
+    }
+  ],
+  "deceased": [
+  ]
+}

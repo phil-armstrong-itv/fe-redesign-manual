@@ -10,6 +10,7 @@ import { ViewPartyPage } from './view-party.page';
 import { PartyRequestsPage } from './requests/party-requests.page';
 import { requestSearchResolver } from './requests/request-search.resolver';
 import { PartyAdvancesPage } from './advances/party-advances-page.component';
+import { partyRelationshipsResolver } from './relationships/party-relationships.resolver';
 import { paymentSearchResolver } from './payments/payment-search.resolver';
 
 export const routes: Routes = [
@@ -70,9 +71,6 @@ export const routes: Routes = [
       {
         path: 'requests',
         component: PartyRequestsPage,
-        data: {
-          activeTab: 'requests',
-        },
         resolve: {
           requests: requestSearchResolver,
         },
@@ -94,7 +92,7 @@ export const routes: Routes = [
           activeTab: 'relationships',
         },
         resolve: {
-          // TODO create resolve to load relationships
+          relationships: partyRelationshipsResolver,
         },
       },
     ],

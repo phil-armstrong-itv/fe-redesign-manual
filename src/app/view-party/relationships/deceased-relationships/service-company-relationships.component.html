@@ -1,0 +1,10 @@
+<div>
+  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Executor / Beneficiary relationships</h2>
+
+  @if (relationships().length > 0)
+  {
+    <talpay-table [columns]="columns" [data]="relationships()"></talpay-table>
+  } @else {
+    <span>No relationships exist</span>
+  }
+</div>

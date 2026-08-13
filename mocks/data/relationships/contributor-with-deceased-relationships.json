@@ -1,0 +1,21 @@
+{
+  "agents": [],
+  "serviceCompanies": [],
+  "deceased": [
+    {
+      "name": "Person 1",
+      "partyId": "12345",
+      "status": "historic",
+      "relationship": "executor",
+      "partyType": "contributor",
+      "endDate": "2026-08-01"
+    },
+    {
+      "name": "Person 2",
+      "partyId": "23456",
+      "status": "active",
+      "relationship": "beneficiary",
+      "partyType": "contributor"
+    }
+  ]
+}

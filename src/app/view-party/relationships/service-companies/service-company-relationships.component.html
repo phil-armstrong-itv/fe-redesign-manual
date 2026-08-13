@@ -1,0 +1,21 @@
+<div>
+  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Service Company relationships</h2>
+
+  @if (relationships().length > 0)
+  {
+    <talpay-table [columns]="columns" [data]="relationships()"></talpay-table>
+  } @else {
+    <span>No relationships exist</span>
+  }
+
+  <div>
+    <button hlmBtn>
+      <ng-icon name="lucidePlus" />
+      <span>Create relationship</span>
+    </button>
+    <button hlmBtn>
+      <ng-icon name="lucideArrowRightLeft" />
+      <span>Record service company change</span>
+    </button>
+  </div>
+</div>

@@ -14,5 +14,4 @@ import { RouterLink } from '@angular/router';
 })
 export class Navbar {
   protected readonly _value = signal('home');
-  protected readonly _mobileMenuOpen = signal(false);
 }

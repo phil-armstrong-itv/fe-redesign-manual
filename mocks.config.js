@@ -49,7 +49,7 @@ module.exports = {
     },
     collections: {
       // Selected collection
-      selected: "base",
+      selected: "contributor",
     },
   },
   server: {

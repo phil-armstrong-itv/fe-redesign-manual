@@ -12,6 +12,7 @@ export interface Contributor extends Party {
   type: 'contributor';
   demographicDetails: ContributorDemographicDetails;
   unionPensionDetails: UnionPensionDetails[];
+  deceasedDate?: Date;
 }
 
 export interface ServiceCompany extends Party {
@@ -112,4 +113,21 @@ export interface UnionPensionDetails {
   name: string;
   enrolled: boolean;
   pensionNumber: string;
+}
+
+export interface RelationshipDetails {
+  agents: Relationship[];
+  serviceCompanies: Relationship[];
+  deceased: DeceasedRelationshipDetails[];
+}
+
+export interface Relationship {
+  name: string;
+  partyId: string;
+  status: string;
+}
+
+export interface DeceasedRelationshipDetails extends Relationship {
+  relationship: 'beneficiary' | 'executor';
+  endDate: Date;
 }

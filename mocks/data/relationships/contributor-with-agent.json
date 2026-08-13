@@ -1,0 +1,11 @@
+{
+  "agents": [
+    {
+      "name": "Agent Mulder",
+      "partyId": "12345",
+      "status": "active"
+    }
+  ],
+  "serviceCompanies": [],
+  "deceased": []
+}

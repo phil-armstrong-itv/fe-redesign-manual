@@ -10,10 +10,13 @@ import { HlmTabs, HlmTabsList, HlmTabsTrigger } from '@spartan-ng/helm/tabs';
 import { Agent, Contributor, Party, ServiceCompany } from '../../types/party';
 import { filter, map } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { lucideSkull } from '@ng-icons/lucide';
+import { NgIcon, provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'app-view-party-page',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, HlmTabsList, HlmTabs, HlmTabsTrigger],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HlmTabsList, HlmTabs, HlmTabsTrigger, NgIcon],
+  providers: [provideIcons({ lucideSkull })],
   templateUrl: './view-party.page.html',
   styleUrl: './view-party.page.css',
 })
@@ -30,6 +33,8 @@ export class ViewPartyPage {
   private readonly router = inject(Router);
 
   party = input.required<Party>();
+  type = computed(() => this.party().type);
+  isDeceased = computed(() => this.type() === 'contributor' && !!(this.party() as Contributor).deceasedDate);
   partyId = computed(() => this.party().id);
   partyName = computed(() => {
     const party = this.party();

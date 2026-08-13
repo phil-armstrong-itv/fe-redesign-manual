@@ -1,0 +1,40 @@
+{
+  "type": "contributor",
+  "id": "00001",
+  "deceasedDate": "2024-06-01",
+  "demographicDetails": {
+    "names": {
+      "first": "Phil",
+      "middle": null,
+      "last": "Armstrong",
+      "stage": null
+    },
+    "address": {
+      "line1": "Fake House",
+      "line2": "123 Fake Street",
+      "line3": "Fake Village",
+      "town": "Fakepool",
+      "postcode": "FA12 0FF",
+      "country": "Fakeland"
+    },
+    "emails": {
+      "primary": "fake1@gmail.com",
+      "payDocuments": "fake2@gmail.com",
+      "vat": "fake3@gmail.com"
+    },
+    "contactNumber": "07783131234",
+    "dateOfBirth": "01/01/2000",
+    "niNumber": "123456789",
+    "gtvapId": "12345",
+    "status": "active",
+    "foreignEntertainer": false
+  },
+  "paymentDetails": {
+    "type": "uk",
+    "bankName": "bank name",
+    "accountName": "account name",
+    "sortCode": "00-01-02",
+    "accountNumber": "12345678",
+    "rollNumber": null
+  }
+}

@@ -1,4 +1,12 @@
-<h1 class="mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">{{ partyName() }} ({{partyId()}})</h1>
+<h1 class="mb-4 text-4xl font-bold tracking-tight text-heading md:text-5xl lg:text-6xl">
+  @if (isDeceased()) {
+    <ng-icon name="lucideSkull" />
+  }
+  <span [class.line-through]="isDeceased()">{{ partyName() }} ({{partyId()}})</span>
+  @if (isDeceased()) {
+    <ng-icon name="lucideSkull" />
+  }
+</h1>
 
 <hlm-tabs [tab]="activeTab()" class="flex w-full flex-col">
   <hlm-tabs-list aria-label="party navigation tabs" class="!w-full" variant="line">
