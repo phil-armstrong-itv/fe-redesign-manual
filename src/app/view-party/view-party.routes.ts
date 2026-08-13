@@ -70,7 +70,9 @@ export const routes: Routes = [
       {
         path: 'requests',
         component: PartyRequestsPage,
-
+        data: {
+          activeTab: 'requests',
+        },
         resolve: {
           requests: requestSearchResolver,
         },
