@@ -18,8 +18,16 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './view-party.page.css',
 })
 export class ViewPartyPage {
-  private static readonly TABS = ['relationships', 'engagements', 'payments', 'debt', 'advances', 'history'];
-  private router = inject(Router);
+  private static readonly TABS = [
+    'relationships',
+    'engagements',
+    'requests',
+    'payments',
+    'debt',
+    'advances',
+    'history',
+  ];
+  private readonly router = inject(Router);
 
   party = input.required<Party>();
   partyId = computed(() => this.party().id);
@@ -41,7 +49,7 @@ export class ViewPartyPage {
   activeTab = toSignal(
     this.router.events.pipe(
       filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-      map(e => this.getTabFromUrl(e.urlAfterRedirects)),
+      map((e) => this.getTabFromUrl(e.urlAfterRedirects)),
     ),
     { initialValue: this.getTabFromUrl(this.router.url) },
   );
