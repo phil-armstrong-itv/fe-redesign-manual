@@ -4,10 +4,11 @@ import { HideInfo } from '../../hideInfo/hide-info';
 import { Contributor, Party } from '../../../types/party';
 import { DemographicDetails } from '../../demographic-details/demographic-details';
 import { PaymentSummaryDetails } from '../../payment-summary-details/payment-summary-details';
+import { VatSummaryDetails } from '../../vat-details/vat-summary-details';
 
 @Component({
   selector: 'app-party-summary-page',
-  imports: [Accordion, HideInfo, DemographicDetails, PaymentSummaryDetails],
+  imports: [Accordion, DemographicDetails, PaymentSummaryDetails, VatSummaryDetails],
   templateUrl: './party-summary.page.html',
   styleUrl: './party-summary.page.css',
 })

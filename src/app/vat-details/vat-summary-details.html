@@ -1,0 +1,41 @@
+<div>
+  <div class="row-auto">
+    <div class="col-xs-3"><label class="right">VAT status:</label></div><div class="columns-7xl">{{ vatDetails().status }}</div>
+  </div>
+  @if (vatDetails() !== null) {
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Vat number</label></div><div class="columns-7xl">{{ vatDetails().vatNumber }}</div>
+    </div>
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">VAT start date</label></div><div class="columns-7xl">{{ vatDetails().startDate }}</div>
+    </div>
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">VAT end date</label></div><div class="columns-7xl">{{ vatDetails().endDate }}</div>
+    </div>
+    @if (vatDetails().sbas === null || vatDetails().sbas.length === 0) {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">SBA start date</label></div><div class="columns-7xl">-</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">SBA end date</label></div><div class="columns-7xl">-</div>
+      </div>
+    } @else {
+      @for (sba of vatDetails().sbas; track sba) {
+        <div class="row-auto">
+          <div class="columns-3xs"><label class="right">SBA start date</label></div><div class="columns-7xl">{{ sba.startDate }}</div>
+        </div>
+        <div class="row-auto">
+          <div class="columns-3xs"><label class="right">SBA end date</label></div><div class="columns-7xl">{{ sba.endDate }}</div>
+        </div>
+        <div class="column-auto">
+          <div >
+            <input class="talpay-checkbox" [checked]="sba.status === 'signed'" type="checkbox" id='sbaStatus' disabled/>
+            <label class='control-label' for='sbaStatus'>{{ sba.status }}</label>
+          </div>
+        </div>
+      }
+    }
+  } @else {
+    <div class="columns-7xl">No VAT details entered</div>
+  }
+</div>

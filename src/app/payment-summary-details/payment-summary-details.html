@@ -26,8 +26,7 @@
         <div class="columns-3xs"><label class="right">Sort code</label></div><div class="columns-7xl">{{ getUkPaymentDetails().sortCode }}</div>
       </div>
       <div class="row-auto">
-        <div class="columns-3xs"><label class="right">Account number</label></div>
-        <div class="columns-7xl">{{ getUkPaymentDetails().accountNumber }}</div>
+        <hideInfo [title]="'Account number'" [info]=getUkPaymentDetails().accountNumber></hideInfo>
       </div>
       <div class="row-auto">
         <div class="columns-3xs"><label class="right">Roll number</label></div>
@@ -63,5 +62,4 @@
       <label class='control-label' for='onHoldNoteCheck'>On Hold</label>
     </div>
   </div>
-
 </div>

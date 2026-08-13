@@ -1,6 +1,23 @@
 {
   "type": "contributor",
   "id": "00001",
+  "unionPensionDetails": [
+    {
+      "name": "Equity pension number",
+      "enrolled": false,
+      "pensionNumber": null
+    },
+    {
+      "name": "Writer's Guild pension numbe",
+      "enrolled": false,
+      "pensionNumber": null
+    },
+    {
+      "name": "Musician's Union pension number",
+      "enrolled": false,
+      "pensionNumber": null
+    }
+  ],
   "demographicDetails": {
     "names": {
       "first": "Phil",
@@ -35,5 +52,16 @@
     "sortCode": "00-01-02",
     "accountNumber": "12345678",
     "rollNumber": null
+  },
+  "vatDetails": {
+    "status": "eligible",
+    "vatNumber": "123456789",
+    "startDate": "2023-01-01",
+    "endDate": null,
+    "sbas": [{
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-31",
+      "status": "signed"
+    }]
   }
 }
