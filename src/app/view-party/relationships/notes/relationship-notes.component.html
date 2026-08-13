@@ -1,0 +1,40 @@
+<div>
+  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Relationships Notes</h2>
+  @if (notes()) {
+    <div>
+      <span>{{ notes() }}</span>
+    </div>
+  } @else {
+    <div>
+      <span>No notes</span>
+    </div>
+  }
+
+  <hlm-drawer>
+    <button hlmDrawerTrigger hlmBtn variant="outline">
+      <ng-icon name="lucidePlus" />
+      <span>Create Notes</span>
+    </button>
+    <hlm-drawer-content *hlmDrawerPortal="let ctx">
+      <hlm-drawer-header>
+        <h3 hlmDrawerTitle>Edit relationship notes</h3>
+      </hlm-drawer-header>
+      <div class="px-4">
+        <textarea hlmTextarea placeholder="Type your message here." [value]="notes()"></textarea>
+      </div>
+      <hlm-drawer-footer>
+        <button hlmDrawerClose hlmBtn>
+          <ng-icon name="lucideSave" />
+          <span>Save</span>
+        </button>
+        <button hlmDrawerClose hlmBtn variant="destructive">
+          <ng-icon name="lucideDelete" />
+          <span>Delete</span>
+        </button>
+        <button hlmDrawerClose hlmBtn variant="secondary">
+          <span>Cancel</span>
+        </button>
+      </hlm-drawer-footer>
+    </hlm-drawer-content>
+  </hlm-drawer>
+</div>

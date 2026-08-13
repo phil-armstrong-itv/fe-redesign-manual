@@ -5,10 +5,16 @@ import { lucidePlus, lucideArrowRightLeft } from '@ng-icons/lucide';
 import { AgentRelationships } from './agent/agent-relationships.component';
 import { ServiceCompanyRelationships } from './service-companies/service-company-relationships.component';
 import { DeceasedRelationships } from './deceased-relationships/service-company-relationships.component';
+import { RelationshipNotes } from './notes/relationship-notes.component';
 
 @Component({
   selector: 'app-party-relationships-page',
-  imports: [ AgentRelationships, ServiceCompanyRelationships, DeceasedRelationships],
+  imports: [
+    AgentRelationships,
+    ServiceCompanyRelationships,
+    DeceasedRelationships,
+    RelationshipNotes,
+  ],
   providers: [provideIcons({ lucidePlus, lucideArrowRightLeft })],
   templateUrl: './party-relationships.page.html',
   styleUrl: './party-relationships.page.css',
