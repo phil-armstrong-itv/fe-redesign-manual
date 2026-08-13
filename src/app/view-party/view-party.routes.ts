@@ -12,6 +12,7 @@ import { requestSearchResolver } from './requests/request-search.resolver';
 import { PartyAdvancesPage } from './advances/party-advances-page.component';
 import { partyRelationshipsResolver } from './relationships/party-relationships.resolver';
 import { paymentSearchResolver } from './payments/payment-search.resolver';
+import { debtResolver } from './debt/debt.resolver';
 
 export const routes: Routes = [
   {
@@ -55,7 +56,7 @@ export const routes: Routes = [
           activeTab: 'debt',
         },
         resolve: {
-          // TODO create resolver to load debt
+          partyDebts: debtResolver
         },
       },
       {
