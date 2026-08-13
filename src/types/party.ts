@@ -119,6 +119,7 @@ export interface RelationshipDetails {
   agents: Relationship[];
   serviceCompanies: Relationship[];
   deceased: DeceasedRelationshipDetails[];
+  notes?: string;
 }
 
 export interface Relationship {
