@@ -9,3 +9,8 @@
 <accordion [title]="'VAT Details'">
   <vat-summary-details [vatDetails]="party().vatDetails"></vat-summary-details>
 </accordion>
+@if (party().type === 'contributor') {
+  <accordion [title]="'Union Pension Details'">
+    <union-pension-summary-details [unionPensionDetails]="getContributorParty().unionPensionDetails"></union-pension-summary-details>
+  </accordion>
+}

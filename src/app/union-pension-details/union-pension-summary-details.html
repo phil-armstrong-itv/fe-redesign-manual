@@ -1,0 +1,18 @@
+<div class="row-auto">
+    <div class="columns-3xs">Name</div>
+    <div class="columns-3xs">Pension</div>
+    <div class="columns-3xs">Pension number</div>
+</div>
+<div>
+  @for (upd of unionPensionDetails(); track upd) {
+    <div class="row-auto">
+      <div class="columns-7xl">{{ upd.name }}</div>
+      <div class="columns-7xl"><span class='fa' [ngClass]='{"fa-check":upd.enrolled,"fa-times":!upd.enrolled}'></span></div>
+      @if (upd.pensionNumber === null) {
+        <div class="columns-7xl">-</div>
+      } @else {
+        <div class="columns-7xl">{{ upd.pensionNumber }}</div>
+      }
+    </div>
+  }
+</div>
