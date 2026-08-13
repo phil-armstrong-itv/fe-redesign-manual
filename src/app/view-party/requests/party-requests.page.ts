@@ -1,6 +1,8 @@
-import { Component, effect, input } from '@angular/core';
+import { Component, effect, input, signal } from '@angular/core';
 import { Request} from '../../../types/request'
 import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
+
+import { RequestSearchService } from '../../services/request-search.service';
 @Component({
   selector: 'app-party-request-page',
   imports: [TalpayTable],
@@ -8,11 +10,21 @@ import { TalpayTable } from '../../commonComponents/table/talpay-table.component
 })
 export class PartyRequestsPage {
   requests = input.required<Request[]>();
-
+  displayRequests = signal<Request[]>([]);
   columns = ['referenceNo', 'requestedDate','formType','contributorParty','payeeParty','workGroup','programmeName', 'total', 'status']
-  constructor() {
+
+  searchEvent(searchString: string) {
+  console.log(searchString);
+    var queryParam = 'requestReference='+ searchString;
+
+    this.requestSearchService.requestSearchWithQueryParams(queryParam).subscribe(newRequests => {
+      this.displayRequests.set(newRequests);
+    })
+  }
+
+  constructor(private requestSearchService: RequestSearchService) {
     effect(() => {
-      console.log(`requests loaded ${this.requests() as Request[]}`);
+     this.displayRequests.set(this.requests())
     });
   }
 }
