@@ -1,6 +1,5 @@
 import { Component, effect, input, signal } from '@angular/core';
 import { Payment } from '../../../types/payment';
-import { Request } from '../../../types/request';
 import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
 import { PaymentSearchService } from '../../services/payment-search.service';
 

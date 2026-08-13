@@ -117,6 +117,7 @@ export interface UnionPensionDetails {
 
 export interface RelationshipDetails {
   agents: Relationship[];
+  contributors: Relationship[];
   serviceCompanies: Relationship[];
   deceased: DeceasedRelationshipDetails[];
   notes?: string;

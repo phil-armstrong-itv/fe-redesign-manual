@@ -4,9 +4,10 @@ const collections = [
     routes: [
       'view-party:contributor',
       'request-search:success',
-      'request-search-with-query-params:success',
       'payment-search:success',
+      'payment-search-with-query-params:success',
       'party-relationships:contributor-with-agent',
+      'get-debt-for-party:success',
     ],
   },
   {
@@ -14,10 +15,10 @@ const collections = [
     routes: [
       'view-party:contributor-deceased',
       'request-search:success',
-      'request-search-with-query-params:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-deceased',
+      'get-debt-for-party:success',
     ],
   },
   {
@@ -25,10 +26,10 @@ const collections = [
     routes: [
       'view-party:service-company',
       'request-search:success',
-      'request-search-with-query-params:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
-      'party-relationships:contributor-with-deceased',
+      'party-relationships:service-company-with-contributors',
+      'get-debt-for-party:success',
     ],
   },
   {
@@ -36,10 +37,11 @@ const collections = [
     routes: [
       'view-party:agent',
       'request-search:success',
-      'request-search-with-query-params:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-deceased',
+      'party-relationships:agent-with-contributors',
+      'get-debt-for-party:success',
     ],
   },
 ];

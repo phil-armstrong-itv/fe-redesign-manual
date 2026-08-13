@@ -1,0 +1,14 @@
+{
+  "agents": [
+  ],
+  "contributors": [
+    {
+      "name": "Contributor 1",
+      "partyId": "12345",
+      "status": "active"
+    }
+  ],
+  "serviceCompanies": [],
+  "deceased": [],
+  "notes": "this is a note."
+}
