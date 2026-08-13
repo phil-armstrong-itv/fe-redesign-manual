@@ -1,0 +1,67 @@
+<div>
+  <div class="column-auto">
+    <div class="row-auto">
+      <div class="col-xs-3"><label class="right">Payment type</label></div><div class="columns-7xl">{{ paymentDetails().type }}</div>
+    </div>
+    @if (paymentDetails().type === "uk") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Currency</label></div><div class="columns-7xl">{{ getUkPaymentDetails().bankName }}</div>
+      </div>
+    }
+    @if (paymentDetails().type === "international") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Currency</label></div><div class="columns-7xl">{{ getInternationalPaymentDetails().currency }}</div>
+      </div>
+    }
+    @if (paymentDetails().type === "sepa") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Bank name</label></div><div class="columns-7xl">{{ getInternationalPaymentDetails().currency }}</div>
+      </div>
+    }
+    <div class="row-auto">
+      <div class="columns-3xs"><label class="right">Account name</label></div><div class="columns-7xl">{{ paymentDetails().accountName }}</div>
+    </div>
+    @if (paymentDetails().type === "uk") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Sort code</label></div><div class="columns-7xl">{{ getUkPaymentDetails().sortCode }}</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Account number</label></div>
+        <div class="columns-7xl">{{ getUkPaymentDetails().accountNumber }}</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Roll number</label></div>
+        <div class="columns-7xl">{{ getUkPaymentDetails().rollNumber }}</div>
+      </div>
+    }
+    @if (paymentDetails().type === "international") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">IBAN</label></div><div class="columns-7xl">{{ getInternationalPaymentDetails().iban }}</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">BIC or other identifier</label></div>
+        <div class="columns-7xl">{{ getInternationalPaymentDetails().bicCode }}</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">Special instructions</label></div>
+        <div class="columns-7xl">{{ getInternationalPaymentDetails().specialInstructions }}</div>
+      </div>
+    }
+    @if (paymentDetails().type === "sepa") {
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">IBAN</label></div><div class="columns-7xl">{{ getSepaPaymentDetails().iban }}</div>
+      </div>
+      <div class="row-auto">
+        <div class="columns-3xs"><label class="right">BIC code</label></div>
+        <div class="columns-7xl">{{ getSepaPaymentDetails().bicCode }}</div>
+      </div>
+    }
+  </div>
+  <div class="column-auto">
+    <div >
+      <input class="talpay-checkbox" [checked]="paymentDetails().onHold" type="checkbox" id='onHoldNoteCheck' disabled/>
+      <label class='control-label' for='onHoldNoteCheck'>On Hold</label>
+    </div>
+  </div>
+
+</div>
