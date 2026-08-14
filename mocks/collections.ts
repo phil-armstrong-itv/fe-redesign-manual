@@ -42,7 +42,6 @@ const collections = [
       'request-search:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
-      'party-relationships:contributor-with-deceased',
       'party-relationships:agent-with-contributors',
       'get-debt-for-party:success',
       'request-search-with-query-params:success'
