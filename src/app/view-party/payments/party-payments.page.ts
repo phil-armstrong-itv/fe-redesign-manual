@@ -2,6 +2,7 @@ import { Component, effect, input, signal } from '@angular/core';
 import { Payment } from '../../../types/payment';
 import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
 import { PaymentSearchService } from '../../services/payment-search.service';
+import { Filter } from '../../../types/filter';
 
 @Component({
   selector: 'app-party-relationships-page',
@@ -21,6 +22,13 @@ export class PartyPaymentsPage {
     'payeeType',
     'amount',
     'status',
+  ]
+
+  filters: Filter[] = [
+    {
+      label: 'Payment Reference',
+      value: 'paymentReference'
+    }
   ]
 
   searchEvent(searchString: string) {

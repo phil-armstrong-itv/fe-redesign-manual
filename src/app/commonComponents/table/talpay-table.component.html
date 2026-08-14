@@ -1,4 +1,17 @@
 <hlm-field orientation="horizontal">
+  @if (searchFilters().length > 0) {
+    <hlm-combobox>
+      <hlm-combobox-input placeholder="-- Please Select --" />
+      <hlm-combobox-content *hlmComboboxPortal>
+        <hlm-combobox-empty>No items found.</hlm-combobox-empty>
+        <div hlmComboboxList>
+          @for (filter of searchFilters(); track $index) {
+            <hlm-combobox-item [value]="filter">{{ filter.label }}</hlm-combobox-item>
+          }
+        </div>
+      </hlm-combobox-content>
+    </hlm-combobox>
+  }
   <input hlmInput [(ngModel)]="searchText" type="search" placeholder="Search..." />
   <button (click)="search()" hlmBtn>Search</button>
 </hlm-field>
@@ -8,7 +21,7 @@
     <thead hlmTableHeader>
     <tr hlmTableRow>
       @for (column of columns(); track column) {
-        <th hlmTableHead>{{column}}</th>
+        <th hlmTableHead>{{ column }}</th>
       }
     </tr>
     </thead>
@@ -16,7 +29,7 @@
       @for (request of data(); track $index) {
         <tr hlmTableRow>
           @for (column of columns(); track column) {
-            <td hlmTableCell>{{$any(request)[column]}}</td>
+            <td hlmTableCell>{{ $any(request)[column] }}</td>
           }
         </tr>
       }
