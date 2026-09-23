@@ -1,31 +1,26 @@
-import { Component, input } from '@angular/core';
-import { isNil } from "lodash";
+import { Component, computed, input } from '@angular/core';
 import { ContributorDemographicDetails } from '../../types/party';
+import { LabelledItem } from '../../reusable-components/labelled-item/labelled-item';
 
 @Component({
   selector: 'demographic-details',
   templateUrl: './demographic-details.html',
   styleUrl: './demographic-details.css',
+  imports: [LabelledItem],
 })
 export class DemographicDetails {
   demographicDetails = input.required<ContributorDemographicDetails>();
 
-  getPartyName() {
-    return this.demographicDetails().names.first + " " + this.demographicDetails().names.last;
-  }
-
-  getFullAddress(separator = ", "): string {
-    let address = '';
-    const addressEntity = this.demographicDetails().address;
-    if (!isNil(addressEntity)) {
-      address += addressEntity.line1 ? addressEntity.line1 : "";
-      address += addressEntity.line2 ? separator + addressEntity.line2 : "";
-      address += addressEntity.line3 ? separator + addressEntity.line3 : "";
-      address += addressEntity.town ? separator + addressEntity.town : "";
-      address += addressEntity.postcode ? separator + addressEntity.postcode : "";
-      address += addressEntity.country ? separator + addressEntity.country : "";
-      return address.trim();
-    }
-    return address;
-  }
+  partyName = computed(() => this.demographicDetails().names.first + ' ' + this.demographicDetails().names.last);
+  fullAddress = computed(() => {
+    let address = this.demographicDetails().address;
+    return [
+      address.line1,
+      address.line2,
+      address.line3,
+      address.town,
+      address.postcode,
+      address.country,
+    ].join(', ');
+  });
 }

@@ -3,6 +3,8 @@ hlm-accordion-trigger {
   color: oklch(0.97 0.01 255);
   border-radius: 10px;
   margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 hlm-accordion-content {
   margin: 10px;

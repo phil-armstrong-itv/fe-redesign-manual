@@ -1,0 +1,11 @@
+<div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
+  <labelled-item key="Payment Type" value="UK E-payment"></labelled-item>
+  <labelled-item key="Account Name" [value]="paymentDetails().accountName"></labelled-item>
+  <labelled-item key="Bank Name" [value]="paymentDetails().bankName"></labelled-item>
+  <labelled-item key="Account Number" [value]="paymentDetails().accountNumber">
+    <ng-icon name="lucideEye"></ng-icon>
+  </labelled-item>
+  <labelled-item key="Sort Code" [value]="paymentDetails().sortCode"></labelled-item>
+  <labelled-item key="Roll Number" [value]="paymentDetails().rollNumber"></labelled-item>
+  <labelled-boolean key="On Hold" [value]="paymentDetails().onHold"></labelled-boolean>
+</div>

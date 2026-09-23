@@ -4,7 +4,7 @@ import { provideIcons } from '@ng-icons/core';
 import { lucidePlus, lucideArrowRightLeft } from '@ng-icons/lucide';
 import { AgentRelationships } from './agent-relationships/agent-relationships.component';
 import { ServiceCompanyRelationships } from './service-companies/service-company-relationships.component';
-import { DeceasedRelationships } from './deceased-relationships/service-company-relationships.component';
+import { DeceasedRelationships } from './deceased-relationships/deceased-relationships';
 import { RelationshipNotes } from './relationship-notes/relationship-notes.component';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';

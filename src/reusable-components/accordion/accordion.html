@@ -1,7 +1,9 @@
 <hlm-accordion>
-  <hlm-accordion-item>
+  <hlm-accordion-item [isOpened]="true">
     <hlm-accordion-trigger>{{ title() }}</hlm-accordion-trigger>
-    <hlm-accordion-content><ng-content></ng-content></hlm-accordion-content>
+    <hlm-accordion-content>
+      <ng-content />
+    </hlm-accordion-content>
   </hlm-accordion-item>
 </hlm-accordion>
 

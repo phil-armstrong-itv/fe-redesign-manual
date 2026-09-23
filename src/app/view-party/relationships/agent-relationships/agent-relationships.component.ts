@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { Relationship } from '../../../../types/party';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { NgIcon } from '@ng-icons/core';
-import { TalpayTable } from '../../../commonComponents/table/talpay-table.component';
+import { TalpayTable } from '../../../../reusable-components/table/talpay-table.component';
 
 @Component({
   selector: 'app-agent-relationships',

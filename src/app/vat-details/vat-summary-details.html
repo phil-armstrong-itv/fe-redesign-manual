@@ -1,41 +1,14 @@
-<div>
-  <div class="row-auto">
-    <div class="col-xs-3"><label class="right">VAT status:</label></div><div class="columns-7xl">{{ vatDetails().status }}</div>
+@if (vatDetails().status === 'eligible') {
+  <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
+    <labelled-item key="Vat Status" value="Eligible"></labelled-item>
+    <labelled-item key="Vat Number" [value]="vatDetails().vatNumber"></labelled-item>
+    <labelled-date key="Start Date" [value]="vatDetails().startDate"></labelled-date>
+    <labelled-date key="End Date" [value]="vatDetails().endDate"></labelled-date>
   </div>
-  @if (vatDetails() !== null) {
-    <div class="row-auto">
-      <div class="columns-3xs"><label class="right">Vat number</label></div><div class="columns-7xl">{{ vatDetails().vatNumber }}</div>
-    </div>
-    <div class="row-auto">
-      <div class="columns-3xs"><label class="right">VAT start date</label></div><div class="columns-7xl">{{ vatDetails().startDate }}</div>
-    </div>
-    <div class="row-auto">
-      <div class="columns-3xs"><label class="right">VAT end date</label></div><div class="columns-7xl">{{ vatDetails().endDate }}</div>
-    </div>
-    @if (vatDetails().sbas === null || vatDetails().sbas.length === 0) {
-      <div class="row-auto">
-        <div class="columns-3xs"><label class="right">SBA start date</label></div><div class="columns-7xl">-</div>
-      </div>
-      <div class="row-auto">
-        <div class="columns-3xs"><label class="right">SBA end date</label></div><div class="columns-7xl">-</div>
-      </div>
-    } @else {
-      @for (sba of vatDetails().sbas; track sba) {
-        <div class="row-auto">
-          <div class="columns-3xs"><label class="right">SBA start date</label></div><div class="columns-7xl">{{ sba.startDate }}</div>
-        </div>
-        <div class="row-auto">
-          <div class="columns-3xs"><label class="right">SBA end date</label></div><div class="columns-7xl">{{ sba.endDate }}</div>
-        </div>
-        <div class="column-auto">
-          <div >
-            <input class="talpay-checkbox" [checked]="sba.status === 'signed'" type="checkbox" id='sbaStatus' disabled/>
-            <label class='control-label' for='sbaStatus'>{{ sba.status }}</label>
-          </div>
-        </div>
-      }
-    }
-  } @else {
-    <div class="columns-7xl">No VAT details entered</div>
-  }
-</div>
+  <br>
+  <sba-details [sbas]="vatDetails().sbas" />
+} @else {
+  <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
+    <labelled-item key="Vat Status" value="Ineligible"></labelled-item>
+  </div>
+}

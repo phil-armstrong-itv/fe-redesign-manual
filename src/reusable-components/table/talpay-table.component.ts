@@ -4,8 +4,8 @@ import { HlmInput } from '@spartan-ng/helm/input';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { HlmField } from '@spartan-ng/helm/field';
 import { FormsModule } from '@angular/forms';
-import { Filter } from '../../../types/filter';
-import { HlmComboboxList, HlmCombobox, HlmComboboxImports } from '../../../../libs/ui/combobox/src';
+import { Filter } from '../../types/filter';
+import { HlmComboboxList, HlmCombobox, HlmComboboxImports } from '../../../libs/ui/combobox/src';
 @Component({
   selector: 'talpay-table',
   imports: [

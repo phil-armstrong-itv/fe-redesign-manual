@@ -1,0 +1,5 @@
+@switch (bankAccountType()) {
+  @case ('uk') {
+    <uk-bank-account-details [paymentDetails]="ukPaymentDetails()" />
+  }
+}

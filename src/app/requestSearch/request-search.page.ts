@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Request } from '../../types/request';
 import { RequestSearchService } from '../services/request-search.service';
-import { TalpayTable } from '../commonComponents/table/talpay-table.component';
+import { TalpayTable } from '../../reusable-components/table/talpay-table.component';
 
 
 @Component({

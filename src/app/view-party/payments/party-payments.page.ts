@@ -1,6 +1,6 @@
 import { Component, effect, input, signal } from '@angular/core';
 import { Payment } from '../../../types/payment';
-import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
+import { TalpayTable } from '../../../reusable-components/table/talpay-table.component';
 import { PaymentSearchService } from '../../services/payment-search.service';
 import { Filter } from '../../../types/filter';
 

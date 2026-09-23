@@ -1,7 +1,7 @@
-import { Component, signal, input, effect, computed } from '@angular/core';
+import { Component, input, computed } from '@angular/core';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { TalpayTable } from '../../commonComponents/table/talpay-table.component';
+import { TalpayTable } from '../../../reusable-components/table/talpay-table.component';
 import { Debt } from '../../../types/debt';
 import { HlmDrawerImports } from '@spartan-ng/helm/drawer';
 import { lucidePlus, lucideSave, lucideDelete } from '@ng-icons/lucide';
