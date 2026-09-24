@@ -4,6 +4,7 @@ import { SbaDetails } from '../../../types/party';
 import { DatePipe } from '@angular/common';
 import { lucideCheck, lucideX } from '@ng-icons/lucide';
 import { NgIcon, provideIcons } from '@ng-icons/core';
+import { TalpayTable } from '../../../reusable-components/table/talpay-table.component';
 
 @Component({
   selector: 'sba-details',
@@ -11,7 +12,6 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
   styleUrl: './self-billing-agreement-details.css',
   providers: [provideIcons({ lucideCheck, lucideX })],
   imports: [
-    HlmCaption,
     HlmTBody,
     HlmTHead,
     HlmTable,
@@ -21,6 +21,7 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
     HlmTr,
     DatePipe,
     NgIcon,
+    TalpayTable,
   ],
 })
 export class SelfBillingAgreementDetails {

@@ -1,7 +1,9 @@
 <span class="header">Self Billing Agreements</span>
+
+<talpay-table [columns]="['Start Date', 'End Date']" [data]="sbas()"></talpay-table>
+
 <div hlmTableContainer>
   <table hlmTable>
-    <caption hlmTableCaption>Requests Table</caption>
     <thead hlmTableHeader>
     <tr hlmTableRow>
       <th hlmTableHead>Start Date</th>

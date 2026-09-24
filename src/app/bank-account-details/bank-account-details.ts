@@ -9,6 +9,8 @@ import { UkBankAccountDetails } from './uk-bank-account-details/uk-bank-account-
   imports: [ UkBankAccountDetails],
 })
 export class BankAccountDetails {
+  partyId = input.required<string>();
+
   paymentDetails = input.required<PaymentDetails>();
   bankAccountType = computed(() => this.paymentDetails().type);
   ukPaymentDetails = computed(() => this.paymentDetails() as UkPaymentDetails);

@@ -133,3 +133,7 @@ export interface DeceasedRelationshipDetails extends Relationship {
   relationship: 'beneficiary' | 'executor';
   endDate: Date;
 }
+
+export interface BankAccountNumber {
+  bankAccountNumber: string;
+}

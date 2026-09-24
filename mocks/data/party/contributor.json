@@ -50,7 +50,7 @@
     "bankName": "bank name",
     "accountName": "account name",
     "sortCode": "00-01-02",
-    "accountNumber": "12345678",
+    "accountNumber": "****5678",
     "rollNumber": null
   },
   "vatDetails": {

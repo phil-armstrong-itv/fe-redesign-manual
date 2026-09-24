@@ -4,7 +4,7 @@
   </accordion>
 }
 <accordion [title]="'Payment Details'">
-  <payment-summary-details [paymentDetails]="party().paymentDetails"></payment-summary-details>
+  <payment-summary-details [partyId]="party().id" [paymentDetails]="party().paymentDetails"></payment-summary-details>
 </accordion>
 <accordion [title]="'VAT Details'">
   <vat-summary-details [vatDetails]="party().vatDetails"></vat-summary-details>

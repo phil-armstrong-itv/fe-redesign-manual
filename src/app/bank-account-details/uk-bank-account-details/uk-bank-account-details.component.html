@@ -2,8 +2,8 @@
   <labelled-item key="Payment Type" value="UK E-payment"></labelled-item>
   <labelled-item key="Account Name" [value]="paymentDetails().accountName"></labelled-item>
   <labelled-item key="Bank Name" [value]="paymentDetails().bankName"></labelled-item>
-  <labelled-item key="Account Number" [value]="paymentDetails().accountNumber">
-    <ng-icon name="lucideEye"></ng-icon>
+  <labelled-item key="Account Number" [value]="displayedBankAccountNumber()">
+    <obfuscate-bank-account-number [partyId]="partyId()" (bankAccountNumber)="updateDisplayedBankAccountNumber($event)" />
   </labelled-item>
   <labelled-item key="Sort Code" [value]="paymentDetails().sortCode"></labelled-item>
   <labelled-item key="Roll Number" [value]="paymentDetails().rollNumber"></labelled-item>

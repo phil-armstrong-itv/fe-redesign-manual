@@ -8,7 +8,8 @@ const collections = [
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-agent',
       'get-debt-for-party:success',
-      'request-search-with-query-params:success'
+      'request-search-with-query-params:success',
+      'get-party-bank-account:default',
     ],
   },
   {
@@ -20,7 +21,8 @@ const collections = [
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-deceased',
       'get-debt-for-party:success',
-      'request-search-with-query-params:success'
+      'request-search-with-query-params:success',
+      'get-party-bank-account:default',
     ],
   },
   {
@@ -32,7 +34,8 @@ const collections = [
       'payment-search-with-query-params:success',
       'party-relationships:service-company-with-contributors',
       'get-debt-for-party:success',
-      'request-search-with-query-params:success'
+      'request-search-with-query-params:success',
+      'get-party-bank-account:default',
     ],
   },
   {
@@ -44,7 +47,8 @@ const collections = [
       'payment-search-with-query-params:success',
       'party-relationships:agent-with-contributors',
       'get-debt-for-party:success',
-      'request-search-with-query-params:success'
+      'request-search-with-query-params:success',
+      'get-party-bank-account:default',
     ],
   },
 ];
