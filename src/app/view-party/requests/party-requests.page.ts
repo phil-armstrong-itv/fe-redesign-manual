@@ -4,6 +4,7 @@ import { TalpayTable } from '../../../reusable-components/table/talpay-table.com
 
 import { RequestSearchService } from '../../services/request-search.service';
 import { Filter } from '../../../types/filter';
+import { Column } from '../../../reusable-components/table/types';
 @Component({
   selector: 'app-party-request-page',
   imports: [TalpayTable],
@@ -12,7 +13,17 @@ import { Filter } from '../../../types/filter';
 export class PartyRequestsPage {
   requests = input.required<Request[]>();
   displayRequests = signal<Request[]>([]);
-  columns = ['referenceNo', 'requestedDate','formType','contributorParty','payeeParty','workGroup','programmeName', 'total', 'status']
+  columns: Column[] = [
+    { key: 'referenceNo', display: 'Reference No' },
+    { key: 'requestedDate', display: 'Requested Date' },
+    { key: 'formType', display: 'Form Type' },
+    { key: 'contributorParty', display: 'Contributor' },
+    { key: 'payeeParty', display: 'Payee' },
+    { key: 'workGroup', display: 'Work Group' },
+    { key: 'programmeName', display: 'Programme' },
+    { key: 'total', display: 'Total' },
+    { key: 'status', display: 'Status' },
+  ];
   filters: Filter[] = [
     {
       label: 'Agent',

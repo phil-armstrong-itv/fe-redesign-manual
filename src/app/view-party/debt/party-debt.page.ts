@@ -6,6 +6,7 @@ import { Debt } from '../../../types/debt';
 import { HlmDrawerImports } from '@spartan-ng/helm/drawer';
 import { lucidePlus, lucideSave, lucideDelete } from '@ng-icons/lucide';
 import { PartyDebtForm } from './debt-form/party-debt-form.component';
+import { Column } from '../../../reusable-components/table/types';
 
 
 @Component({
@@ -25,5 +26,13 @@ export class PartyDebtPage {
   partyDebts = input.required<Debt[]>();
   currentDebt = computed(() => this.partyDebts().reduce((acc, debt) => acc + debt.amount, 0));
 
-  columns = ['type', 'date', 'amount', 'refNo', 'programme', 'createdBy', 'description'];
+  columns: Column[] = [
+    { key: 'type', display: 'Type' },
+    { key: 'date', display: 'Date' },
+    { key: 'amount', display: 'Amount' },
+    { key: 'refNo', display: 'Reference No' },
+    { key: 'programme', display: 'Programme' },
+    { key: 'createdBy', display: 'Created By' },
+    { key: 'description', display: 'Description' },
+  ];
 }

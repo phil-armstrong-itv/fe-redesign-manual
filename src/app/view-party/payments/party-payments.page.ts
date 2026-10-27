@@ -3,6 +3,7 @@ import { Payment } from '../../../types/payment';
 import { TalpayTable } from '../../../reusable-components/table/talpay-table.component';
 import { PaymentSearchService } from '../../services/payment-search.service';
 import { Filter } from '../../../types/filter';
+import { Column } from '../../../reusable-components/table/types';
 
 @Component({
   selector: 'app-party-relationships-page',
@@ -14,15 +15,15 @@ export class PartyPaymentsPage {
   payments = signal<Payment[]>([]);
   partyPayments = input.required<Payment[]>();
 
-  columns = [
-    'datePaid',
-    'paymentMethod',
-    'paymentReference',
-    'payee',
-    'payeeType',
-    'amount',
-    'status',
-  ]
+  columns: Column[] = [
+    { key: 'datePaid', display: 'Date Paid' },
+    { key: 'paymentMethod', display: 'Payment Method' },
+    { key: 'paymentReference', display: 'Payment Reference' },
+    { key: 'payee', display: 'Payee' },
+    { key: 'payeeType', display: 'Payee Type' },
+    { key: 'amount', display: 'Amount' },
+    { key: 'status', display: 'Status' },
+  ];
 
   filters: Filter[] = [
     {

@@ -1,19 +1,26 @@
 <div hlmTableContainer>
   <table hlmTable>
-    <caption hlmTableCaption>Requests Table</caption>
+    @if (caption()) {
+      <caption hlmTableCaption>{{ caption() }}</caption>
+    }
     <thead hlmTableHeader>
     <tr hlmTableRow>
-      <ng-content select="columns" />
-      @for (column of columns(); track column) {
-        <th hlmTableHead>{{ column }}</th>
+      @for (column of columns(); track column.key) {
+        <th hlmTableHead>{{ column.display }}</th>
       }
     </tr>
     </thead>
     <tbody hlmTableBody>
-      @for (request of data(); track $index) {
+      @for (row of data(); track $index) {
         <tr hlmTableRow>
-          @for (column of columns(); track column) {
-            <td hlmTableCell>{{ $any(request)[column] }}</td>
+          @for (column of columns(); track column.key) {
+            <td hlmTableCell>
+              @if (cellTemplates()[column.key]; as template) {
+                <ng-container *ngTemplateOutlet="template; context: { $implicit: row[column.key], row }" />
+              } @else {
+                {{ row[column.key] }}
+              }
+            </td>
           }
         </tr>
       }

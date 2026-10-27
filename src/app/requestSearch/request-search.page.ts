@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { Request } from '../../types/request';
 import { RequestSearchService } from '../services/request-search.service';
 import { TalpayTable } from '../../reusable-components/table/talpay-table.component';
+import { Column } from '../../reusable-components/table/types';
 
 
 @Component({
@@ -10,16 +11,16 @@ import { TalpayTable } from '../../reusable-components/table/talpay-table.compon
   imports: [TalpayTable],
 })
 export class RequestSearchPage {
-  columns = [
-    'referenceNo',
-    'requestedDate',
-    'formType',
-    'contributorParty',
-    'payeeParty',
-    'workGroup',
-    'programmeName',
-    'total',
-    'status',
+  columns: Column[] = [
+    { key: 'referenceNo', display: 'Reference No' },
+    { key: 'requestedDate', display: 'Requested Date' },
+    { key: 'formType', display: 'Form Type' },
+    { key: 'contributorParty', display: 'Contributor' },
+    { key: 'payeeParty', display: 'Payee' },
+    { key: 'workGroup', display: 'Work Group' },
+    { key: 'programmeName', display: 'Programme' },
+    { key: 'total', display: 'Total' },
+    { key: 'status', display: 'Status' },
   ];
   displayRequests = signal<Request[]>([]);
 

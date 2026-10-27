@@ -1,26 +1,8 @@
 <span class="header">Self Billing Agreements</span>
 
-<talpay-table [columns]="['Start Date', 'End Date']" [data]="sbas()"></talpay-table>
-
-<div hlmTableContainer>
-  <table hlmTable>
-    <thead hlmTableHeader>
-    <tr hlmTableRow>
-      <th hlmTableHead>Start Date</th>
-      <th hlmTableHead>End Date</th>
-    </tr>
-    </thead>
-    <tbody hlmTableBody>
-      @for (sba of sbas(); track $index) {
-        <tr hlmTableRow>
-          <td hlmTableCell>{{ sba.startDate | date }}</td>
-          <td hlmTableCell>{{ sba.endDate | date }}</td>
-          <td hlmTableCell>
-            <ng-icon [name]="sba.status === 'signed' ? 'lucideCheck' : 'lucideX'"></ng-icon>
-            <span>{{ sba.status }}</span>
-          </td>
-        </tr>
-      }
-    </tbody>
-  </table>
-</div>
+<talpay-table [columns]="columns()" [data]="sbas()">
+  <ng-template column="status" let-value>
+    <ng-icon [name]="value === 'signed' ? 'lucideCheck' : 'lucideX'"></ng-icon>
+    <span>{{ value | titlecase }}</span>
+  </ng-template>
+</talpay-table>
