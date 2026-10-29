@@ -1,14 +1,6 @@
-@if (vatDetails().status === 'eligible') {
-  <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
-    <labelled-item key="Vat Status" value="Eligible"></labelled-item>
-    <labelled-item key="Vat Number" [value]="vatDetails().vatNumber"></labelled-item>
-    <labelled-date key="Start Date" [value]="vatDetails().startDate"></labelled-date>
-    <labelled-date key="End Date" [value]="vatDetails().endDate"></labelled-date>
-  </div>
+<labelled-item-container [items]="labelledItems()" />
+
+@if (vatEligible()) {
   <br>
   <sba-details [sbas]="vatDetails().sbas" />
-} @else {
-  <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
-    <labelled-item key="Vat Status" value="Ineligible"></labelled-item>
-  </div>
 }

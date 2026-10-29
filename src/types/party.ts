@@ -137,3 +137,8 @@ export interface DeceasedRelationshipDetails extends Relationship {
 export interface BankAccountNumber {
   bankAccountNumber: string;
 }
+
+export interface CurrencyAmount {
+  amount: number;
+  code: string;
+}

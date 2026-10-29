@@ -1,14 +1,1 @@
- <div class="grid grid-cols-1 gap-x-8 gap-y-4 md:grid-cols-2">
-   <labelled-item key="Name" value="{{ partyName() }}"></labelled-item>
-   <labelled-item key="Stage Name" value="{{ demographicDetails().names.stage }}"></labelled-item>
-   <labelled-item key="Home Address" value="{{ fullAddress() }}">
-     <button>View History</button>
-   </labelled-item>
-   <labelled-item key="Date of Birth" value="{{ demographicDetails().dateOfBirth }}"></labelled-item>
-   <labelled-item key="Contact Number" value="{{ demographicDetails().contactNumber }}"></labelled-item>
-   <labelled-item key="Primary E-Mail Address" value="{{ demographicDetails().emails.primary }}"></labelled-item>
-   <labelled-item key="VAT E-Mail Address" value="{{ demographicDetails().emails.vat }}"></labelled-item>
-   <labelled-item key="Pay Documents E-Mail Address" value="{{ demographicDetails().emails.payDocuments }}"></labelled-item>
-   <labelled-item key="National Insurance Number" value="{{ demographicDetails().niNumber }}"></labelled-item>
-   <labelled-item key="GTVAP Id" value="{{ demographicDetails().gtvapId }}"></labelled-item>
- </div>
+<labelled-item-container [items]="labelledItems()" />

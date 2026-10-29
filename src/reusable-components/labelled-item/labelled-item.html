@@ -1,9 +1,36 @@
 <dl>
   <dt>
-    <span class="key">{{ key() }}</span>
-    <ng-content />
+    <span class="key">{{ item().display }}</span>
   </dt>
   <dd>
-    {{ value() || blankValue() }}
+    @if (customTemplates()[item().key]; as customTemplate) {
+      <ng-container
+        [ngTemplateOutlet]="customTemplate"
+        [ngTemplateOutletContext]="{ $implicit: item().value, item: item() }"
+      />
+    } @else {
+      @switch (type()) {
+        @case('date') {
+          <span>{{ (item().value | date) }}</span>
+        }
+        @case('boolean') {
+          <ng-icon [name]="item().value ? 'lucideCheck' : 'lucideX'"></ng-icon>
+        }
+        @case('currency') {
+          <span> {{ item().value.amount | currency: item().value.code }}</span>
+        }
+        @case('undefined')
+        {
+          <span>-</span>
+        }
+        @default {
+          @if (item().value === null) {
+            <span>-</span>
+          } @else {
+            <span>{{ item().value.toString() }}</span>
+          }
+        }
+      }
+    }
   </dd>
 </dl>
