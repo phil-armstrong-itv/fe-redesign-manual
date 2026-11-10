@@ -4,6 +4,7 @@ const collections = [
     routes: [
       'view-party:contributor',
       'request-search:success',
+      'engagement-search:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-agent',
@@ -17,6 +18,7 @@ const collections = [
     routes: [
       'view-party:contributor-deceased',
       'request-search:success',
+      'engagement-search:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
       'party-relationships:contributor-with-deceased',
@@ -30,6 +32,7 @@ const collections = [
     routes: [
       'view-party:service-company',
       'request-search:success',
+      'engagement-search:success',
       'payment-search:success',
       'payment-search-with-query-params:success',
       'party-relationships:service-company-with-contributors',

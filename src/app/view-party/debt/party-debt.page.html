@@ -1,5 +1,5 @@
 <div>
-  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Current debt {{ currentDebt() }}</h2>
+  <h2 class="mb-4 text-3xl font-bold tracking-tight text-heading md:text-2xl lg:text-4xl">Current debt {{ currentDebt() | currency: 'GBP' }}</h2>
   <div>
     <hlm-drawer>
       <button hlmDrawerTrigger hlmBtn variant="outline">
@@ -17,6 +17,10 @@
     </hlm-drawer>
   </div>
   <br />
-  <talpay-table [columns]="columns" [data]="partyDebts()"></talpay-table>
+  <talpay-table [columns]="columns" [data]="partyDebts()">
+    <ng-template column="amount" let-value>
+      {{ value | currency: 'GBP' }}
+    </ng-template>
+  </talpay-table>
 </div>
 

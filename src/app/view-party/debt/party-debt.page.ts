@@ -7,6 +7,8 @@ import { HlmDrawerImports } from '@spartan-ng/helm/drawer';
 import { lucidePlus, lucideSave, lucideDelete } from '@ng-icons/lucide';
 import { PartyDebtForm } from './debt-form/party-debt-form.component';
 import { Column } from '../../../reusable-components/table/types';
+import { CurrencyPipe } from '@angular/common';
+import { TalpayCell } from '../../../reusable-components/table/talpay-cell.directive';
 
 
 @Component({
@@ -17,6 +19,8 @@ import { Column } from '../../../reusable-components/table/types';
     HlmDrawerImports,
     TalpayTable,
     PartyDebtForm,
+    CurrencyPipe,
+    TalpayCell,
   ],
   providers: [provideIcons({ lucidePlus, lucideSave, lucideDelete })],
   templateUrl: './party-debt.page.html',
@@ -24,7 +28,7 @@ import { Column } from '../../../reusable-components/table/types';
 })
 export class PartyDebtPage {
   partyDebts = input.required<Debt[]>();
-  currentDebt = computed(() => this.partyDebts().reduce((acc, debt) => acc + debt.amount, 0));
+  currentDebt = computed(() => Math.abs(this.partyDebts().reduce((acc, debt) => acc + debt.amount, 0)));
 
   columns: Column[] = [
     { key: 'type', display: 'Type' },

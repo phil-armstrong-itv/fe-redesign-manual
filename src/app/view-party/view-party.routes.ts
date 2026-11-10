@@ -13,6 +13,7 @@ import { PartyAdvancesPage } from './advances/party-advances-page.component';
 import { partyRelationshipsResolver } from './relationships/party-relationships.resolver';
 import { paymentSearchResolver } from './payments/payment-search.resolver';
 import { debtResolver } from './debt/debt.resolver';
+import { engagementSearchResolver } from './engagements/engagement-search.resolver';
 
 export const routes: Routes = [
   {
@@ -46,7 +47,7 @@ export const routes: Routes = [
           activeTab: 'engagements',
         },
         resolve: {
-          // TODO create resolver to load engagements
+          engagements: engagementSearchResolver,
         },
       },
       {
@@ -56,7 +57,7 @@ export const routes: Routes = [
           activeTab: 'debt',
         },
         resolve: {
-          partyDebts: debtResolver
+          partyDebts: debtResolver,
         },
       },
       {
@@ -83,7 +84,7 @@ export const routes: Routes = [
           activeTab: 'payments',
         },
         resolve: {
-          partyPayments: paymentSearchResolver
+          partyPayments: paymentSearchResolver,
         },
       },
       {
